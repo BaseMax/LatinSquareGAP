@@ -1,4 +1,9 @@
-Row := function(n, r, c)
+DeclareGlobalFunction("Row");
+DeclareGlobalFunction("CountRow");
+DeclareGlobalFunction("CountLatin");
+DeclareGlobalFunction("ListLatin");
+
+InstallGlobalFunction(Row, function(n, r, c)
     local rowList, len_c, i, subRows;
     rowList := [];
     len_c := Length(c);
@@ -12,10 +17,10 @@ Row := function(n, r, c)
         fi;
     od;
     return rowList;
-end;
+end);
 
-CountRow := function(n, k, r, c)
-    local count, len_c;
+InstallGlobalFunction(CountRow, function(n, k, r, c)
+    local count, len_c, i;
     count := 0;
     len_c := Length(c);
     if len_c = n then
@@ -27,10 +32,10 @@ CountRow := function(n, k, r, c)
         fi;
     od;
     return count;
-end;
+end);
 
-CountLatin := function(n, k)
-    local r;
+InstallGlobalFunction(CountLatin, function(n, k)
+    local r, i;
     if Length(k) = n then
         return 1;
     else
@@ -44,9 +49,9 @@ CountLatin := function(n, k)
         fi;
         return CountRow(n, k, r, []);
     fi;
-end;
+end);
 
-ListLatin := function(n, c)
+InstallGlobalFunction(ListLatin, function(n, c)
     local latinList, r, rows, subLatin, i;
     if Length(c) = n then
         return [ c ];
@@ -67,4 +72,4 @@ ListLatin := function(n, c)
         od;
         return latinList;
     fi;
-end;
+end);
