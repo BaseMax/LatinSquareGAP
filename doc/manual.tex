@@ -1,0 +1,115 @@
+\documentclass{report}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+\title{LatinSquareGAP Manual}
+\author{Seyyed Ali Mohammadiyeh}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+\chapter{Introduction}
+This package provides functions to generate and count Latin squares using GAP. It offers the following capabilities:
+\begin{itemize}
+  \item \textbf{Generation of Latin squares:} Construct all Latin squares of a given order.
+  \item \textbf{Counting Latin squares:} Count the number of Latin squares without explicitly generating all of them.
+  \item \textbf{Random Latin square selection:} Although no dedicated function is provided, you can generate all Latin squares and then select one at random.
+\end{itemize}
+
+\chapter{Functions}
+This package defines four global functions. Their implementations rely on recursive backtracking algorithms to construct Latin squares.
+
+\section{Row}
+\textbf{Prototype:} \texttt{Row(n, r, c)}\\[1mm]
+\textbf{Description:}  
+Computes all possible completions of a row for a Latin square of order \texttt{n}. The parameter \texttt{r} is a list of lists representing the current column restrictions, and \texttt{c} is the partially built row. When the length of \texttt{c} equals \texttt{n}, it returns the completed row as a valid candidate. 
+
+\textbf{Example:}
+\begin{verbatim}
+  gap> Row(3, [[], [], []], []);
+  [ [ 1, 2, 3 ], [ 1, 3, 2 ], ... ]
+\end{verbatim}
+
+\section{CountRow}
+\textbf{Prototype:} \texttt{CountRow(n, k, r, c)}\\[1mm]
+\textbf{Description:}  
+Recursively counts the number of ways to complete the current row given:
+\begin{itemize}
+  \item \texttt{n}: Order of the Latin square.
+  \item \texttt{k}: The list of rows already fixed in the partial Latin square.
+  \item \texttt{r}: The current state of column restrictions (i.e., the list of numbers already used in each column).
+  \item \texttt{c}: The current row being constructed.
+\end{itemize}
+When a row is completed, the function calls \texttt{CountLatin} to continue the counting process.
+
+\section{CountLatin}
+\textbf{Prototype:} \texttt{CountLatin(n, k)}\\[1mm]
+\textbf{Description:}  
+Counts the total number of Latin squares of order \texttt{n} based on a partially constructed Latin square \texttt{k}. If \texttt{k} is empty, the function counts all possible Latin squares. This function is particularly useful when you want to know the number of Latin squares without generating each one explicitly.
+
+\textbf{Example:}
+\begin{verbatim}
+  gap> CountLatin(3, []);
+  12
+\end{verbatim}
+
+\section{ListLatin}
+\textbf{Prototype:} \texttt{ListLatin(n, c)}\\[1mm]
+\textbf{Description:}  
+Generates all Latin squares of order \texttt{n} by recursively constructing them row by row. The parameter \texttt{c} holds the rows of the Latin square constructed so far. When \texttt{c} is empty, the function generates the entire set of Latin squares of order \texttt{n}.
+
+\textbf{Example:}
+\begin{verbatim}
+  gap> L := ListLatin(3, []);
+  gap> Length(L);
+  12
+\end{verbatim}
+
+\chapter{Usage Examples}
+\section{Counting Latin Squares}
+To count the number of Latin squares of order 4, run:
+\begin{verbatim}
+  gap> CountLatin(4, []);
+\end{verbatim}
+
+\section{Generating Latin Squares}
+To generate all Latin squares of order 3:
+\begin{verbatim}
+  gap> L := ListLatin(3, []);
+  gap> Print(L, "\n");
+\end{verbatim}
+
+\section{Generating a Random Latin Square}
+Although the package does not include a dedicated random generator, you can select one at random from the list of all Latin squares:
+\begin{verbatim}
+  gap> L := ListLatin(3, []);
+  gap> RandomLatin := L[ Random(Length(L)) ];
+  gap> Print(RandomLatin, "\n");
+\end{verbatim}
+
+\chapter{Algorithm Overview}
+The package functions are based on recursive backtracking. The \texttt{Row} function constructs valid rows under the constraints of the Latin square (each symbol appears exactly once per row and column). The \texttt{CountRow} function leverages \texttt{Row} to accumulate counts without explicit list generation, while \texttt{ListLatin} collects all completed Latin squares.
+
+\chapter{Installation and Loading}
+\textbf{Installation:}  
+Clone the repository into the \texttt{pkg} directory of your GAP installation. For example, if your GAP directory is located at \texttt{.../gap-4.X/}, place the LatinSquareGAP folder inside the \texttt{pkg} subdirectory.
+
+\textbf{Loading the Package:}  
+Start GAP and load the package with:
+\begin{verbatim}
+  gap> LoadPackage("LatinSquareGAP");
+\end{verbatim}
+A confirmation message will indicate that the package has been loaded successfully.
+
+\chapter{License and Author}
+This package is released under the MIT License.\\[1mm]
+\textbf{Author:} Seyyed Ali Mohammadiyeh
+
+\chapter{Acknowledgements}
+Thank you to the GAP community for continuous support and to all contributors who helped in the development of this package.
+
+\end{document}
