@@ -1,5 +1,5 @@
 DeclarePackage("LatinSquareGAP", "0.1");
 
-ReadPackage("LatinSquareGAP", "lib/latinsquare.gi");
+ReadPackage("LatinSquareGAP", "latinsquare.gi");
 
 Print("LatinSquareGAP package loaded successfully.\n");
