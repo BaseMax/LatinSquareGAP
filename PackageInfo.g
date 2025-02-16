@@ -8,7 +8,7 @@ SetPackageInfo( rec(
     Website := "https://github.com/BaseMax/LatinSquareGAP",
     Description := "A package for counting and generating Latin squares in GAP.",
     Dependencies := rec(
-        GAP := ">= 4.12"
+        GAP := ">= 4.0"
     ),
     ArchiveURL := "https://github.com/BaseMax/LatinSquareGAP/releases"
 ));
