@@ -51,8 +51,16 @@ InstallGlobalFunction(LatinCount, function(n, k)
     fi;
 end);
 
-InstallGlobalFunction(LatinList, function(n, c)
+InstallGlobalFunction(LatinList, function(n, c...)
     local latinList, r, rows, subLatin, i;
+	if Length(c) = 0 then
+		c := [];
+	else
+		if Length(c) > 1 then
+			Print("Warning: more than one argument passed to LatinList - we will ignore all but the first one");
+		fi;
+		c := c[1];
+	fi;
     if Length(c) = n then
         return [ c ];
     else
