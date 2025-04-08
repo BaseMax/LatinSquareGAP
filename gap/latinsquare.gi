@@ -3,6 +3,8 @@
 #
 # Implementations
 #
+
+# Implementation LatinRow
 InstallGlobalFunction(LatinRow, function(n, r, c)
 	local rowList, len_c, i, subRows;
 	rowList := [];
@@ -19,6 +21,7 @@ InstallGlobalFunction(LatinRow, function(n, r, c)
 	return rowList;
 end);
 
+# Implementation LatinCountRow
 InstallGlobalFunction(LatinCountRow, function(n, k, r, c)
 	local count, len_c, i;
 	count := 0;
@@ -34,8 +37,17 @@ InstallGlobalFunction(LatinCountRow, function(n, k, r, c)
 	return count;
 end);
 
+# Implementation LatinCount
 InstallGlobalFunction(LatinCount, function(n, k)
 	local r, i;
+	if Length(k) = 0 then
+		k := [];
+	else
+		if Length(k) > 1 then
+			Print("Warning: more than one argument passed to LatinList - we will ignore all but the first one");
+		fi;
+		k := k[1];
+	fi;
 	if Length(k) = n then
 		return 1;
 	else
@@ -51,6 +63,7 @@ InstallGlobalFunction(LatinCount, function(n, k)
 	fi;
 end);
 
+# Implementation LatinList
 InstallGlobalFunction(LatinList, function(n, c...)
 	local latinList, r, rows, subLatin, i;
 	if Length(c) = 0 then
