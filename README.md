@@ -3,17 +3,18 @@
 ## Using
 
 ```gap
-LoadPackage("latinsquare");
-LatinCount(3, [3, 5, 6]);
+gap> LoadPackage("latinsquare");
+gap> LatinCount(3);
+gap> LatinList(4);
 ```
 
 ## Contact
 
 Department of Pure Mathematics, Faculty of Mathematical Sciences, University of Kashan, Kashan 87317-53153, I. R. Iran
 
-alim@kashanu.ac.ir
-
 max@std.kashanu.ac.ir
+
+<!-- alim@kashanu.ac.ir -->
 
 maxbasecode@gmail.com
 
