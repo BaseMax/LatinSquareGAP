@@ -1,11 +1,20 @@
-# The GAP package latinsquare
+# Latin Square Package for the GAP System
 
-## Using
+This package provides tools for working with Latin squares in the GAP (Groups, Algorithms, Programming) system.
+
+## Installation & Usage
+
+To use the package in GAP, first load it with:
 
 ```gap
 gap> LoadPackage("latinsquare");
-gap> LatinCount(3);
-gap> LatinList(4);
+```
+
+You can then use the following functions:
+
+```gap
+gap> LatinCount(3);     # Counts the number of Latin squares of order 3
+gap> LatinList(4);      # Returns a list of Latin squares of order 4
 ```
 
 ## Contact
