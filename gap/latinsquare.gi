@@ -80,7 +80,7 @@ InstallGlobalFunction(LatinSquareList, function(n, c...)
         else
             r := List([1..n], i -> List(c, row -> row[i]));
         fi;
-        rows := LatinSquareCountRow(n, r, []);
+        rows := LatinSquareListRow(n, r, []);
         latinList := [];
         for i in rows do
             subLatin := LatinSquareList(n, Concatenation(c, [i]));

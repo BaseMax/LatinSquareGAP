@@ -8,6 +8,13 @@
 
 ```gap
 gap> LoadPackage("latinsquare");
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Loading latinsquare 0.1 (A package for counting and generating Latin squares in GAP.)
+by Seyyed Ali Mohammadiyeh (https://github.com/basemax).
+Homepage: https://github.com/BaseMax/LatinSquareGAP/
+Report issues at https://github.com/BaseMax/LatinSquareGAP/issues
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+true
 ```
 
 **Listing:**
@@ -22,8 +29,15 @@ gap> LatinSquareList(3);
 
 ```
 gap> LatinSquareCount(1);
+1
 gap> LatinSquareCount(2);
+2
 gap> LatinSquareCount(3);
+12
+gap> LatinSquareCount(4);
+576
+gap> LatinSquareCount(5);
+161280
 ```
 
 ## Contact
