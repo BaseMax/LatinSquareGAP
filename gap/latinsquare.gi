@@ -34,20 +34,28 @@ InstallGlobalFunction(LatinSquareCountRow, function(n, k, r, c)
     return count;
 end);
 
-InstallGlobalFunction(LatinSquareCount, function(n, k)
+InstallGlobalFunction(LatinSquareCount, function(n, c...)
     local r, i;
-    if Length(k) = n then
+	if Length(c) = 0 then
+		c := [];
+	else
+		if Length(c) > 1 then
+			Error("Warning: more than one argument passed to LatinList - we can ignore all but the first one");
+		fi;
+		c := c[1];
+	fi;
+    if Length(c) = n then
         return 1;
     else
-        if Length(k) = 0 then
+        if Length(c) = 0 then
             r := [];
             for i in [1..n] do
                 Add(r, []);
             od;
         else
-            r := List([1..n], i -> List(k, row -> row[i]));
+            r := List([1..n], i -> List(c, row -> row[i]));
         fi;
-        return LatinSquareCountRow(n, k, r, []);
+        return LatinSquareCountRow(n, c, r, []);
     fi;
 end);
 
