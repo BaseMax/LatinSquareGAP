@@ -16,7 +16,7 @@
 
 #! @Description
 #!   Insert documentation for your function here
-DeclareGlobalFunction( "LatinSquareRow" );
+DeclareGlobalFunction( "LatinSquareListRow" );
 
 #! @Description
 #!   Insert documentation for your function here
