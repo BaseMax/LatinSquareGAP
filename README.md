@@ -4,11 +4,23 @@
 
 ## Using
 
+**Loading:**
+
 ```gap
 gap> LoadPackage("latinsquare");
+```
+
+**Listing:**
+
+```gap
 gap> LatinSquareList(1);
 gap> LatinSquareList(2);
 gap> LatinSquareList(3);
+```
+
+**Counting:**
+
+```
 gap> LatinSquareCount(1);
 gap> LatinSquareCount(2);
 gap> LatinSquareCount(3);
