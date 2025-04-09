@@ -1,10 +1,17 @@
 # The GAP package latinsquare
 
+**latinsquare:** A package for counting and generating Latin squares in GAP.
+
 ## Using
 
 ```gap
-LoadPackage("latinsquare");
-LatinCount(3, [3, 5, 6]);
+gap> LoadPackage("latinsquare");
+gap> LatinSquareList(1);
+gap> LatinSquareList(2);
+gap> LatinSquareList(3);
+gap> LatinSquareCount(1);
+gap> LatinSquareCount(2);
+gap> LatinSquareCount(3);
 ```
 
 ## Contact
@@ -18,5 +25,7 @@ max@std.kashanu.ac.ir
 maxbasecode@gmail.com
 
 ## License
+
+GPL-2.0-or-later
 
 Copyright 2025, Seyyed Ali Mohammadiyeh (Max Base)
