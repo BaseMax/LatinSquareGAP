@@ -12,7 +12,7 @@ InstallGlobalFunction(LatinSquareRow, function(n, r, c)
     fi;
     for i in [1..n] do
         if not i in c and not i in r[ len_c + 1 ] then
-            subRows := LatinRow(n, r, Concatenation(c, [i]));
+            subRows := LatinCountRow(n, r, Concatenation(c, [i]));
             rowList := Concatenation(rowList, subRows);
         fi;
     od;
@@ -24,11 +24,11 @@ InstallGlobalFunction(LatinSquareCountRow, function(n, k, r, c)
     count := 0;
     len_c := Length(c);
     if len_c = n then
-        count := count + LatinCount(n, Concatenation(k, [c]));
+        count := count + LatinSquareCount(n, Concatenation(k, [c]));
     fi;
     for i in [1..n] do
         if not i in c and not i in r[ len_c + 1 ] then
-            count := count + LatinCountRow(n, k, r, Concatenation(c, [i]));
+            count := count + LatinSquareCountRow(n, k, r, Concatenation(c, [i]));
         fi;
     od;
     return count;
@@ -47,7 +47,7 @@ InstallGlobalFunction(LatinSquareCount, function(n, k)
         else
             r := List([1..n], i -> List(k, row -> row[i]));
         fi;
-        return LatinCountRow(n, k, r, []);
+        return LatinSquareCountRow(n, k, r, []);
     fi;
 end);
 
@@ -72,10 +72,10 @@ InstallGlobalFunction(LatinSquareList, function(n, c...)
         else
             r := List([1..n], i -> List(c, row -> row[i]));
         fi;
-        rows := LatinRow(n, r, []);
+        rows := LatinCountRow(n, r, []);
         latinList := [];
         for i in rows do
-            subLatin := LatinList(n, Concatenation(c, [i]));
+            subLatin := LatinSquareList(n, Concatenation(c, [i]));
             latinList := Concatenation(latinList, subLatin);
         od;
         return latinList;
