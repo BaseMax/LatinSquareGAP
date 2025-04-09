@@ -12,7 +12,7 @@ PackageName := "latinsquare",
 Subtitle := "A package for counting and generating Latin squares in GAP.",
 Version := "0.1",
 Date := "08/04/2025", # dd/mm/yyyy format
-License := "MIT",
+License := "GPL-2.0-or-later",
 
 Persons := [
   rec(
@@ -28,8 +28,8 @@ Persons := [
   ),
 ],
 
-SourceRepository := rec( Type := "git", URL := "https://github.com/BaseMax/LatinSquareGAP" ),
-IssueTrackerURL := "https://github.com/BaseMax/LatinSquareGAP/issues",
+#SourceRepository := rec( Type := "TODO", URL := "URL" ),
+#IssueTrackerURL := "TODO",
 PackageWWWHome := "https://github.com/BaseMax/LatinSquareGAP/",
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
@@ -60,6 +60,6 @@ AvailabilityTest := ReturnTrue,
 
 TestFile := "tst/testall.g",
 
-Keywords := [ "combinatorics", "design of experiments", "latin-square", "latin", "latin square" ],
+#Keywords := [ "TODO" ],
 
 ));

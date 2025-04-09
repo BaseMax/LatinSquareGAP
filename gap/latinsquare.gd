@@ -16,7 +16,16 @@
 
 #! @Description
 #!   Insert documentation for your function here
-DeclareGlobalFunction( "LatinRow" );
-DeclareGlobalFunction( "LatinCountRow" );
-DeclareGlobalFunction( "LatinCount" );
-DeclareGlobalFunction( "LatinList" );
+DeclareGlobalFunction( "LatinSquareRow" );
+
+#! @Description
+#!   Insert documentation for your function here
+DeclareGlobalFunction( "LatinSquareCountRow" );
+
+#! @Description
+#!   Insert documentation for your function here
+DeclareGlobalFunction( "LatinSquareCount" );
+
+#! @Description
+#!   Insert documentation for your function here
+DeclareGlobalFunction( "LatinSquareList" );
