@@ -30,7 +30,7 @@ Persons := [
 
 SourceRepository := rec( Type := "git", URL := "https://github.com/BaseMax/LatinSquareGAP" ),
 IssueTrackerURL := "https://github.com/BaseMax/LatinSquareGAP/issues",
-PackageWWWHome := "https://github.com/BaseMax/LatinSquareGAP/",
+PackageWWWHome := "https://github.com/BaseMax/LatinSquareGAP/blob/main/",
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
 ArchiveURL     := Concatenation( ~.PackageWWWHome,
