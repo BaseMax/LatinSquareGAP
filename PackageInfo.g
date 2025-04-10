@@ -28,8 +28,11 @@ Persons := [
   ),
 ],
 
-SourceRepository := rec( Type := "git", URL := "https://github.com/BaseMax/LatinSquareGAP" ),
-IssueTrackerURL := "https://github.com/BaseMax/LatinSquareGAP/issues",
+SourceRepository := rec(
+    Type := "git",
+    URL := Concatenation( "https://github.com/gap-packages/", LowercaseString( ~.PackageName ) ),
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
 PackageWWWHome :=
   Concatenation( "https://gap-packages.github.io/", LowercaseString( ~.PackageName ) ),
 PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
