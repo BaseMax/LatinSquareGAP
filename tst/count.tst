@@ -17,15 +17,15 @@
 gap> START_TEST("Latin Square package: count.tst");
 
 # Testing the external binary
-gap> LatinSquareCount(1) = 1      # 1x1 square has 1 way to fill it
+gap> LatinSquareCount(1) = 1;      # 1x1 square has 1 way to fill it
 true
-gap> LatinSquareCount(2) = 2      # 2x2 square has 2 ways to fill it
+gap> LatinSquareCount(2) = 2;      # 2x2 square has 2 ways to fill it
 true
-gap> LatinSquareCount(3) = 12     # 3x3 square has 12 ways to fill it
+gap> LatinSquareCount(3) = 12;     # 3x3 square has 12 ways to fill it
 true
-gap> LatinSquareCount(4) = 576    # 4x4 square has 576 ways to fill it
+gap> LatinSquareCount(4) = 576;    # 4x4 square has 576 ways to fill it
 true
-gap> LatinSquareCount(5) = 161280 # 5x5 square has 161280 ways to fill it
+gap> LatinSquareCount(5) = 161280; # 5x5 square has 161280 ways to fill it
 true
 
 ## Each test file should finish with the call of STOP_TEST.
